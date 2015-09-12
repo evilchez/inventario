@@ -1,0 +1,31 @@
+%h1 LISTADO DE PRODUCTOS
+
+%table.table.table-condensed
+  %thead
+    %tr
+      %th Cod
+      %th Name
+      %th Quantity
+      %th Image
+      %th Description
+      %th Price
+      %th
+      %th
+      %th
+
+  %tbody
+    - @products.each do |product|
+      %tr{class: "#{'danger' if product.quantity<=50} #{'success' if product.quantity>150}"}
+        %td= product.cod
+        %td= product.name
+        %td= product.quantity
+        %td= product.image
+        %td= product.description
+        %td= product.price
+        %td= link_to 'Show', product
+        %td= link_to 'Edit', edit_product_path(product)
+        %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'INGRESE PRODUCTO', new_product_path

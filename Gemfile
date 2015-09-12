@@ -14,7 +14,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'haml-rails'
 gem 'high_voltage'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 gem 'simple_form'
 group :development do
   gem 'better_errors'

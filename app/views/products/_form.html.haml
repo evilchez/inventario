@@ -1,0 +1,13 @@
+= simple_form_for(@product) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :cod,label:"CODIGO:"
+    = f.input :name,label:"NOMBRE:",hint:"MAXIMO 50 CARACTERES"
+    = f.input :quantity,as: :float
+    = f.input :image,as: :file
+    = f.input :description,as: :text
+    = f.input :price
+
+  .form-actions
+    = f.button :submit
